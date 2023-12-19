@@ -14,14 +14,24 @@ int main()
     for (int i = 0; i < M; i++)
     {
         int r1, r2;
-        int tmp[N];
 
         scanf("%d%d", &r1, &r2);        
+        
+        int range = r2 - r1;
 
-        for (int j = r1; r1 < r2; j++)
+        r1--;
+        r2--;
+
+        for (int j = 0; j <= range / 2; j++, r1++, r2--)
         {
-            //피곤해잘랭    
-        }
+            int tmp;
 
+            tmp = arr[r1];
+            arr[r1] = arr[r2];
+            arr[r2] = tmp;
+        }
     }
+
+    for (int i = 0; i < N; i++)
+        printf("%d ", arr[i] + 1);
 }
