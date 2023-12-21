@@ -6,7 +6,18 @@ int main()
 
     scanf("%d", &N);
 
-    for (int )
+    while (N > 1)
+    {
+        for (int i = 2; i <= N; i++)
+        {
+            if (N % i == 0)
+            {
+                printf("%d\n", i);
 
-    //누가 롤하자고 하네요
+                N /= i;
+
+                break;
+            }
+        }
+    }
 }
