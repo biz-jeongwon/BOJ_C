@@ -2,7 +2,7 @@
 
 int main()
 {
-    int M, N;
+    int M, N, min = 10000;
     char Bchess[8][8] = {0, };
     char Wchess[8][8] = {0, };
 
@@ -23,7 +23,6 @@ int main()
             }
         }
     }
-
     for (int i = 0; i < 8; i++) // Wchess 초기화
     {
         for (int j = 0; j < 8; j++)
@@ -60,7 +59,31 @@ int main()
         }
     }
 
-    for (int i = 0; i < )
-    
+    for (int i = 0; i < M - 7; i++)
+    {
+        for (int j = 0; j < N - 7; j++)
+        {
+            int tmp1 = 0, tmp2 = 0;
 
+            for (int k = i; k < i + 8; k++)
+            {
+                for (int l = j; l < j + 8; l++)
+                {
+                    if (Bchess[k - i][l - j] != MNboard[k][l])
+                        tmp1++;
+
+                    if (Wchess[k - i][l - j] != MNboard[k][l])
+                        tmp2++;
+                }
+            }
+
+            if (tmp1 <= min)
+                min = tmp1;
+            
+            if (tmp2 <= min)
+                min = tmp2;
+        }
+    }
+    
+    printf("%d", min);
 }       
