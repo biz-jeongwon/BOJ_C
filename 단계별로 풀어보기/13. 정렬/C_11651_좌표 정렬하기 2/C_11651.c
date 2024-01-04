@@ -12,11 +12,11 @@ int compare (const void* first, const void* second)
     dot* f = (dot *)first;
     dot* s = (dot *)second;
 
-    if (f->x > s->x)
+    if (f->y > s->y)
         return 1;
-    else if (f->x == s->x)
+    else if (f->y == s->y)
     {
-        if (f->y > s->y)
+        if (f->x > s->x)
             return 1;
         else
             return -1;
